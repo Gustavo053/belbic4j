@@ -1,13 +1,14 @@
-import contract.Bel;
+import equation.BelbicEquation;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 
 @Getter
 @Setter
-public class Belbic implements Bel, Serializable {
+public class Belbic implements Serializable {
     private Double alpha;
     private Double beta;
     private Double sensoryInputValue;
@@ -28,7 +29,7 @@ public class Belbic implements Bel, Serializable {
     }
 
     public Double run() {
-        Map<String, Double> resultSensoryCortex = sensoryCortex(
+        Map<String, Double> resultSensoryCortex = sensoryCortexExecute(
                 alpha,
                 beta,
                 sensoryInputValue,
@@ -42,7 +43,7 @@ public class Belbic implements Bel, Serializable {
         this.weightAmygdala = resultSensoryCortex.get("newWeightAmygdala");
         this.weightOrbitofrontal = resultSensoryCortex.get("newWeightOrbitofrontal");
 
-        Double resultOrbitofrontalCortex = orbitofrontalCortex(
+        Double resultOrbitofrontalCortex = orbitofrontalCortexExecute(
                 weightOrbitofrontal,
                 sensoryInputValue,
                 rewValue
@@ -50,7 +51,7 @@ public class Belbic implements Bel, Serializable {
 
         this.orbitofrontalCortexValue = resultOrbitofrontalCortex;
 
-        Double resultAmygdala = amygdala(
+        Double resultAmygdala = amygdalaExecute(
                 weightAmygdala,
                 sensoryInputValue,
                 rewValue
@@ -59,5 +60,44 @@ public class Belbic implements Bel, Serializable {
         this.amygdalaValue = resultAmygdala;
 
         return (amygdalaValue - orbitofrontalCortexValue) * rewValue;
+    }
+
+    private Map<String, Double> sensoryCortexExecute(
+            Double alpha,
+            Double beta,
+            Double sensoryInputValue,
+            Double rew,
+            Double amygdalaValue,
+            Double orbitofrontalCortexValue,
+            Double weightAmygdala,
+            Double weightOrbitofrontal
+    ) {
+        Map<String, Double> result = new HashMap();
+        result.put(
+                "newWeightAmygdala",
+                BelbicEquation.weightAmygdalaEquation(alpha, sensoryInputValue, rew, amygdalaValue) + weightAmygdala
+        );
+        result.put(
+                "newWeightOrbitofrontal",
+                BelbicEquation.weightOrbitofrontalEquation(beta, sensoryInputValue, rew, orbitofrontalCortexValue) + weightOrbitofrontal
+        );
+
+        return result;
+    }
+
+    private Double orbitofrontalCortexExecute(
+            Double weightOrbitofrontal,
+            Double sensoryInputValue,
+            Double rew
+    ) {
+        return BelbicEquation.orbitofrontalEquation(weightOrbitofrontal, sensoryInputValue) * rew;
+    }
+
+    private Double amygdalaExecute(
+            Double weightAmygdala,
+            Double sensoryInputValue,
+            Double rew
+    ) {
+        return BelbicEquation.amygdalaEquation(weightAmygdala, sensoryInputValue) * rew;
     }
 }

@@ -55,7 +55,7 @@ public class Belbic implements Serializable {
 
         this.amygdalaValue = resultAmygdala;
 
-        return (amygdalaValue - orbitofrontalCortexValue) * rewValue;
+        return amygdalaValue - orbitofrontalCortexValue;
     }
 
     private Map<String, Double> sensoryCortexExecute(
@@ -86,7 +86,7 @@ public class Belbic implements Serializable {
             Double sensoryInputValue,
             Double rew
     ) {
-        return BelbicEquation.orbitofrontalEquation(weightOrbitofrontal, sensoryInputValue) * rew;
+        return BelbicEquation.orbitofrontalEquation(weightOrbitofrontal, sensoryInputValue);
     }
 
     private Double amygdalaExecute(
@@ -94,7 +94,7 @@ public class Belbic implements Serializable {
             Double sensoryInputValue,
             Double rew
     ) {
-        return BelbicEquation.amygdalaEquation(weightAmygdala, sensoryInputValue) * rew;
+        return BelbicEquation.amygdalaEquation(weightAmygdala, sensoryInputValue);
     }
 
     public Double getAlpha() {

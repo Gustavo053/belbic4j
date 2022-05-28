@@ -1,13 +1,9 @@
 import equation.BelbicEquation;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-@Getter
-@Setter
 public class Belbic implements Serializable {
     private Double alpha;
     private Double beta;
@@ -99,5 +95,69 @@ public class Belbic implements Serializable {
             Double rew
     ) {
         return BelbicEquation.amygdalaEquation(weightAmygdala, sensoryInputValue) * rew;
+    }
+
+    public Double getAlpha() {
+        return alpha;
+    }
+
+    public void setAlpha(Double alpha) {
+        this.alpha = alpha;
+    }
+
+    public Double getBeta() {
+        return beta;
+    }
+
+    public void setBeta(Double beta) {
+        this.beta = beta;
+    }
+
+    public Double getSensoryInputValue() {
+        return sensoryInputValue;
+    }
+
+    public void setSensoryInputValue(Double sensoryInputValue) {
+        this.sensoryInputValue = sensoryInputValue;
+    }
+
+    public Double getAmygdalaValue() {
+        return amygdalaValue;
+    }
+
+    public void setAmygdalaValue(Double amygdalaValue) {
+        this.amygdalaValue = amygdalaValue;
+    }
+
+    public Double getOrbitofrontalCortexValue() {
+        return orbitofrontalCortexValue;
+    }
+
+    public void setOrbitofrontalCortexValue(Double orbitofrontalCortexValue) {
+        this.orbitofrontalCortexValue = orbitofrontalCortexValue;
+    }
+
+    public Double getWeightAmygdala() {
+        return weightAmygdala;
+    }
+
+    public void setWeightAmygdala(Double weightAmygdala) {
+        this.weightAmygdala = weightAmygdala;
+    }
+
+    public Double getWeightOrbitofrontal() {
+        return weightOrbitofrontal;
+    }
+
+    public void setWeightOrbitofrontal(Double weightOrbitofrontal) {
+        this.weightOrbitofrontal = weightOrbitofrontal;
+    }
+
+    public Double getRewValue() {
+        return rewValue;
+    }
+
+    public void setRewValue(Double rewValue) {
+        this.rewValue = rewValue;
     }
 }

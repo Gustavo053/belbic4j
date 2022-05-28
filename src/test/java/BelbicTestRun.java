@@ -81,7 +81,7 @@ public class BelbicTestRun {
         Belbic belbic = new Belbic();
         belbic.initParams(0.45, 0.01, 0.0, 0.0, 0.81, 1.0);
 
-        for (int i = 1; i <= nPoints; i++) {
+        for (int i = 1; i < nPoints; i++) {
             ve[i] = vRef[i - 1] - vs[i - 1];
 
             belbic.setAlpha(belbic.getAlpha() * h);

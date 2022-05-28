@@ -1,5 +1,4 @@
 import contract.Bel;
-import contract.BelEquation;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,10 +17,12 @@ public class Belbic implements Bel, Serializable {
     private Double weightOrbitofrontal;
     private Double rewValue;
 
-    public void initParamsBelbic(Double alpha, Double beta, Double rewValue, Double weightAmygdala, Double weightOrbitofrontal) {
+    public void initParamsBelbic(Double alpha, Double beta, Double rewValue, Double amygdalaValue, Double orbitofrontalCortexValue, Double weightAmygdala, Double weightOrbitofrontal) {
         this.alpha = alpha;
         this.beta = beta;
         this.rewValue = rewValue;
+        this.amygdalaValue = amygdalaValue;
+        this.orbitofrontalCortexValue = orbitofrontalCortexValue;
         this.weightAmygdala = weightAmygdala;
         this.weightOrbitofrontal = weightOrbitofrontal;
     }

@@ -17,7 +17,7 @@ public class Belbic implements Bel, Serializable {
     private Double weightOrbitofrontal;
     private Double rewValue;
 
-    public void initParams(Double alpha, Double beta, Double rewValue, Double amygdalaValue, Double orbitofrontalCortexValue, Double weightAmygdala, Double weightOrbitofrontal) {
+    public void initParams(Double alpha, Double beta, Double amygdalaValue, Double orbitofrontalCortexValue, Double weightAmygdala, Double weightOrbitofrontal) {
         this.alpha = alpha;
         this.beta = beta;
         this.rewValue = rewValue;

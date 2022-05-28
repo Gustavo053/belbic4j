@@ -6,7 +6,6 @@ import java.util.concurrent.Callable;
 import java.util.function.Consumer;
 
 public interface Bel extends BelEquation {
-    void sensoryInputExecute(Runnable runnable);
 //    Map thalamusExecute(Double sensoryInputValue);
     default Map<String, Double> sensoryCortex(
                 Double alpha,

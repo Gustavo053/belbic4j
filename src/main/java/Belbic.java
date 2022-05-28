@@ -27,14 +27,6 @@ public class Belbic implements Bel, Serializable {
         this.weightOrbitofrontal = weightOrbitofrontal;
     }
 
-    public void sensoryInputExecute(Runnable runnable){
-        runnable.run();
-    }
-
-    public void rewExecute(Runnable runnable) {
-        runnable.run();
-    }
-
     public Double run() {
         Map<String, Double> resultSensoryCortex = sensoryCortex(
                 alpha,

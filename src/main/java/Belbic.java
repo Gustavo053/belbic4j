@@ -55,7 +55,8 @@ public class Belbic implements Serializable {
 
         this.amygdalaValue = resultAmygdala;
 
-        return amygdalaValue - orbitofrontalCortexValue;
+        Double controlSignal = amygdalaValue - orbitofrontalCortexValue;
+        return controlSignal;
     }
 
     private Map<String, Double> sensoryCortexExecute(

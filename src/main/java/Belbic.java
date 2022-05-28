@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Getter
 @Setter
-public class Belbic implements Bel, BelEquation, Serializable {
+public class Belbic implements Bel, Serializable {
     private Double alpha;
     private Double beta;
     private Double sensoryInputValue;

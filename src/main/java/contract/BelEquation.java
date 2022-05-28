@@ -1,19 +1,19 @@
 package contract;
 
 public interface BelEquation {
-    Float thalamusExecuteEquation(Float sensoryInputValue);
-    Float weightAmygdalaExecuteEquation(
-            Float alpha,
-            Float sensoryInputValue,
-            Float rew,
-            Float amygdalaCortexValue
+    Double thalamusExecuteEquation(Double sensoryInputValue);
+    Double weightAmygdalaExecuteEquation(
+            Double alpha,
+            Double sensoryInputValue,
+            Double rew,
+            Double amygdalaCortexValue
     );
-    Float weightOrbitofrontalExecuteEquation(
-            Float beta,
-            Float sensoryInputValue,
-            Float rew,
-            Float orbitofrontalCortexValue
+    Double weightOrbitofrontalExecuteEquation(
+            Double beta,
+            Double sensoryInputValue,
+            Double rew,
+            Double orbitofrontalCortexValue
     );
-    Float amygdalaEquation(Float weightAmygdala, Float sensoryInputValue);
-    Float orbitofrontalEquation(Float weightOrbitofrontal, Float sensoryInputValue);
+    Double amygdalaEquation(Double weightAmygdala, Double sensoryInputValue);
+    Double orbitofrontalEquation(Double weightOrbitofrontal, Double sensoryInputValue);
 }

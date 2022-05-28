@@ -1,55 +1,66 @@
 import contract.Bel;
 import contract.BelEquation;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.function.Consumer;
 
-public class Belbic implements Bel, BelEquation {
-    private Float sensoryInputValue;
-    private Float amygdalaCortexValue;
-    private Float amygdalaCortexFinalValue;
-    private Float orbitofrontalCortexValue;
-    private Float orbitofrontalCortexFinalValue;
-    private Float weightAmygdala;
-    private Float weightOrbitofrontal;
+@Getter
+@Setter
+public class Belbic implements Bel, BelEquation, Serializable {
+    private Double sensoryInputValue;
+    private Double amygdalaCortexValue;
+    private Double amygdalaCortexFinalValue;
+    private Double orbitofrontalCortexValue;
+    private Double orbitofrontalCortexFinalValue;
+    private Double weightAmygdala;
+    private Double weightOrbitofrontal;
+    private Double rewValue;
 
-    public Float sensoryInputExecute(Callable callable) throws Exception {
-        return (Float) callable.call();
+    public void sensoryInputExecute(Runnable runnable){
+        runnable.run();
     }
 
-    public Map thalamusExecute(Float sensoryInputValue) {
+    public Map thalamusExecute(Double sensoryInputValue) {
         return null;
     }
 
-    public Float sensoryCortexExecute(Float sensoryInputValue, Float rew, Float amygdalaCortexValue, Float amygdalaCortexFinalValue, Float weightAmygdala, Float weightOrbitofrontal) {
+    public Double sensoryCortexExecute(Double sensoryInputValue, Double rew, Double amygdalaCortexValue, Double amygdalaCortexFinalValue, Double weightAmygdala, Double weightOrbitofrontal) {
         return null;
     }
 
-    public Float orbitofrontalCortexExecute(Float weightOrbitofrontal, Float sensoryInputValue, Float amygdalaCortexValue, Float orbitofrontalCortexValue, Float rew) {
+    public Double orbitofrontalCortexExecute(Double weightOrbitofrontal, Double sensoryInputValue, Double amygdalaCortexValue, Double orbitofrontalCortexValue, Double rew) {
         return null;
     }
 
-    public Float amygdala(Float weightAmygdala, Float sensoryInputValue, Float amygdalaCortexValue, Float orbitofrontalCortexValue, Float rew) {
+    public Double amygdala(Double weightAmygdala, Double sensoryInputValue, Double amygdalaCortexValue, Double orbitofrontalCortexValue, Double rew) {
         return null;
     }
 
-    public Float thalamusExecuteEquation(Float sensoryInputValue) {
+    public Double thalamusExecuteEquation(Double sensoryInputValue) {
         return null;
     }
 
-    public Float weightAmygdalaExecuteEquation(Float alpha, Float sensoryInputValue, Float rew, Float amygdalaCortexValue) {
+    public Double weightAmygdalaExecuteEquation(Double alpha, Double sensoryInputValue, Double rew, Double amygdalaCortexValue) {
         return null;
     }
 
-    public Float weightOrbitofrontalExecuteEquation(Float beta, Float sensoryInputValue, Float rew, Float orbitofrontalCortexValue) {
+    public Double weightOrbitofrontalExecuteEquation(Double beta, Double sensoryInputValue, Double rew, Double orbitofrontalCortexValue) {
         return null;
     }
 
-    public Float amygdalaEquation(Float weightAmygdala, Float sensoryInputValue) {
+    public Double amygdalaEquation(Double weightAmygdala, Double sensoryInputValue) {
         return null;
     }
 
-    public Float orbitofrontalEquation(Float weightOrbitofrontal, Float sensoryInputValue) {
+    public Double orbitofrontalEquation(Double weightOrbitofrontal, Double sensoryInputValue) {
         return null;
+    }
+
+    public void rewExecute(Runnable runnable) {
+        runnable.run();
     }
 }

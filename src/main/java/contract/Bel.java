@@ -2,30 +2,31 @@ package contract;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.function.Consumer;
 
 public interface Bel {
-    Float sensoryInputExecute(Callable callable) throws Exception;
-    Map thalamusExecute(Float sensoryInputValue);
-    Float sensoryCortexExecute(
-                Float sensoryInputValue,
-                Float rew,
-                Float amygdalaCortexValue,
-                Float amygdalaCortexFinalValue,
-                Float weightAmygdala,
-                Float weightOrbitofrontal
+    void sensoryInputExecute(Runnable runnable);
+    Map thalamusExecute(Double sensoryInputValue);
+    Double sensoryCortexExecute(
+                Double sensoryInputValue,
+                Double rew,
+                Double amygdalaCortexValue,
+                Double amygdalaCortexFinalValue,
+                Double weightAmygdala,
+                Double weightOrbitofrontal
             );
-    Float orbitofrontalCortexExecute(
-            Float weightOrbitofrontal,
-            Float sensoryInputValue,
-            Float amygdalaCortexValue,
-            Float orbitofrontalCortexValue,
-            Float rew
+    Double orbitofrontalCortexExecute(
+            Double weightOrbitofrontal,
+            Double sensoryInputValue,
+            Double amygdalaCortexValue,
+            Double orbitofrontalCortexValue,
+            Double rew
     );
-    Float amygdala(
-            Float weightAmygdala,
-            Float sensoryInputValue,
-            Float amygdalaCortexValue,
-            Float orbitofrontalCortexValue,
-            Float rew
+    Double amygdala(
+            Double weightAmygdala,
+            Double sensoryInputValue,
+            Double amygdalaCortexValue,
+            Double orbitofrontalCortexValue,
+            Double rew
     );
 }

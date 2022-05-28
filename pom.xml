@@ -7,9 +7,55 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <groupId>org.example</groupId>
+    <groupId>com.github.gustavo053</groupId>
     <artifactId>belbic4j</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
+
+    <name>belbic4j</name>
+    <inceptionYear>2022</inceptionYear>
+    <description>A simple BELBIC algorithm library for Java language</description>
+    <url>https://github.com/Gustavo053/belbic4j/</url>
+
+    <developers>
+        <developer>
+            <id>Gustavo053</id>
+            <name>Gustavo Fonseca</name>
+            <email>gustavo.fnsc053@gmail.com</email>
+            <organization>GitHub</organization>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <url>https://repo1.maven.org/maven2</url>
+                </repository>
+                <repository>
+                    <id>github</id>
+                    <url>https://maven.pkg.github.com/Gustavo053/belbic4j</url>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/Gustavo053/belbic4j</url>
+        </repository>
+    </distributionManagement>
 </project>

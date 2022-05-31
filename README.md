@@ -2,8 +2,6 @@
 
 A simple *BELBIC* algorithm library for Java language .
 
-This project aims to make the task of creating and writing wiki documents in Java much easier.
-
 ## How to use
 
 The artifact is in the [Maven](http://search.maven.org/) repository so all you need to do is add it as a dependency in your project.

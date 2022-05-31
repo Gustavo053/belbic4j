@@ -1,3 +1,5 @@
+import core.Belbic;
+
 import java.util.Arrays;
 
 public class BelbicTestRun {

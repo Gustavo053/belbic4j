@@ -1,3 +1,5 @@
+package core;
+
 import equation.BelbicEquation;
 
 import java.io.Serializable;

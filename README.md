@@ -54,6 +54,7 @@ double u = belbic.run();
 ### Full usage example
     
 ```java
+import core.Belbic;
 import java.util.Arrays;
 
 public class BelbicTestRun {

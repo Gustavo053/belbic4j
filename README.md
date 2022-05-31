@@ -41,7 +41,7 @@ belbic.setBeta(Double beta);
 - Set values for SI block and reward algorithm:
 ```java
 belbic.setSensoryInputValue(Double sensoryInputValue);
-belbic.setRewValue(Math.abs(Double rewValue);
+belbic.setRewValue(Double rewValue);
 ```
 
 - Run the algorithm and get the control signal:

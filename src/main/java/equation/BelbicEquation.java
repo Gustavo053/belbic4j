@@ -1,6 +1,8 @@
 package equation;
 
-public class BelbicEquation {
+import java.io.Serializable;
+
+public class BelbicEquation implements Serializable {
 
     public static Double weightAmygdalaEquation(
             Double alpha,
